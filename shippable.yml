@@ -32,6 +32,7 @@ jobs:
             - source $HOME/.gvm/scripts/gvm
             - gvm use 1.7.6
             - printenv
+            - ls $SAMPLE_GOL_STATE
             
 resources:
   - name: sample_gol
