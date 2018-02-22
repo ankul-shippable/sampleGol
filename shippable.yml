@@ -15,3 +15,28 @@ build:
     - go build hello-world.go
     - ls
     - ./hello-world
+    
+jobs:
+  - name: go_u16golall_Test
+    type: runSh
+    allowPublicAccess: true
+    steps:
+      - TASK:
+          name: version_1.7.6
+          runtime:
+            options:
+              imageName: "drydock/u16golall"
+              imageTag: "master"
+          script:
+            - source /usr/local/rvm/scripts/rvm
+            - go use 1.7.6
+            - printenv
+            
+ resourecs:
+  - name: sample_gol
+    type: gitRepo
+    integration: "github-subint"
+    versionTemplate:
+      sourceName: ankul-shippable/sampleGol
+      branch: master
+      
