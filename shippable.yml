@@ -31,10 +31,36 @@ jobs:
           script:
             - source $HOME/.gvm/scripts/gvm
             - gvm use 1.7.6
-            - cd $SAMPLE_GOL_STATE && go run hello-world.go hello-world.go
+            - cd $SAMPLE_GOL_STATE && go run hello-world.go
             - cd $SAMPLE_GOL_STATE && go build hello-world.go
             - cd $SAMPLE_GOL_STATE && ls
             - cd $SAMPLE_GOL_STATE &&./hello-world
+      - TASK:
+          name: version_1.8.5
+          runtime:
+            options:
+              imageName: "drydock/u16golall"
+              imageTag: "master"
+          script:
+            - source $HOME/.gvm/scripts/gvm
+            - gvm use 1.8.5
+            - cd $SAMPLE_GOL_STATE && go run hello-world.go
+            - cd $SAMPLE_GOL_STATE && go build hello-world.go
+            - cd $SAMPLE_GOL_STATE && ls
+            - cd $SAMPLE_GOL_STATE &&./hello-world
+      - TASK:
+          name: version_1.9.2
+          runtime:
+            options:
+              imageName: "drydock/u16golall"
+              imageTag: "master"
+          script:
+            - source $HOME/.gvm/scripts/gvm
+            - gvm use 1.9.2
+            - cd $SAMPLE_GOL_STATE && go run hello-world.go
+            - cd $SAMPLE_GOL_STATE && go build hello-world.go
+            - cd $SAMPLE_GOL_STATE && ls
+            - cd $SAMPLE_GOL_STATE &&./hello-world            
 
 resources:
   - name: sample_gol
