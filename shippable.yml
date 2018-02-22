@@ -31,7 +31,7 @@ jobs:
             - go use 1.7.6
             - printenv
             
- resources:
+resources:
   - name: sample_gol
     type: gitRepo
     integration: "github-subint"
