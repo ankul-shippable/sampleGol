@@ -9,6 +9,13 @@ go:
   - 1.9.2
 
 build:
+  pre_ci:
+    - echo 'true'
+  pre_ci_boot:
+    image_name: drydock/u16golall
+    image_tag: master
+    pull: true
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
   ci:
     - go version
     - go run hello-world.go
