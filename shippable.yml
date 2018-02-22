@@ -28,7 +28,6 @@ jobs:
               imageName: "drydock/u16golall"
               imageTag: "master"
           script:
-            - source /usr/local/rvm/scripts/rvm
             - go use 1.7.6
             - printenv
             
