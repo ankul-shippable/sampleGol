@@ -29,6 +29,7 @@ jobs:
               imageName: "drydock/u16golall"
               imageTag: "master"
           script:
+            - source $HOME/.gvm/scripts/gvm
             - gvm use 1.7.6
             - printenv
             
