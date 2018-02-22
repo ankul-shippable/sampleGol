@@ -21,6 +21,7 @@ jobs:
     type: runSh
     allowPublicAccess: true
     steps:
+      - IN: sample_gol
       - TASK:
           name: version_1.7.6
           runtime:
