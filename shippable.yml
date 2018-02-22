@@ -31,9 +31,11 @@ jobs:
           script:
             - source $HOME/.gvm/scripts/gvm
             - gvm use 1.7.6
-            - printenv
-            - ls $SAMPLE_GOL_STATE
-            
+            - go run hello-world.go $SAMPLE_GOL_STATE/hello-world.go
+            - go build $SAMPLE_GOL_STATE/hello-world.go
+            - ls
+            - ./hello-world
+
 resources:
   - name: sample_gol
     type: gitRepo
